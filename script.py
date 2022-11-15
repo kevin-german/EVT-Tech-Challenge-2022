@@ -16,7 +16,7 @@ with socketserver.TCPServer(("", PORT), Handler) as httpd:
 #--Section to wrap the socket for self signed certificate
 '''
 with socketserver.TCPServer(("localhost", PORT), Handler) as httpd:
-    httpd.socket = ssl.wrap_socket(httpd.socket, keyfile="files/key.pem", certfile="files/cert.pem", server_side=True, ssl_version=ssl.PROTOCOL_TLS)
+    httpd.socket = ssl.wrap_socket(httpd.socket, keyfile="key.pem", certfile="cert.pem", server_side=True, ssl_version=ssl.PROTOCOL_TLS)
     print("serving at port", PORT)
     httpd.serve_forever()
 '''
